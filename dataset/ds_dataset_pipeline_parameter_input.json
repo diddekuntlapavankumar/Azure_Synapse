@@ -1,0 +1,44 @@
+{
+	"name": "ds_dataset_pipeline_parameter_input",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "devsynapse-WorkspaceDefaultStorage",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"inputcontainername": {
+				"type": "string"
+			},
+			"inputdirectoryname": {
+				"type": "string"
+			},
+			"inputfilename": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().inputfilename",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().inputdirectoryname",
+					"type": "Expression"
+				},
+				"fileSystem": {
+					"value": "@dataset().inputcontainername",
+					"type": "Expression"
+				}
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
