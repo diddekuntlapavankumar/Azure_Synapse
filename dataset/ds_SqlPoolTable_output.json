@@ -1,0 +1,16 @@
+{
+	"name": "ds_SqlPoolTable_output",
+	"properties": {
+		"annotations": [],
+		"type": "SqlPoolTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "customers"
+		},
+		"sqlPool": {
+			"referenceName": "dedicatedsqlpoolsynapse",
+			"type": "SqlPoolReference"
+		}
+	}
+}
